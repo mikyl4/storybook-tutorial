@@ -31,6 +31,8 @@
     "@angular/platform-browser": "~11.0.6",
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
+    "@storybook/addon-docs": "^6.2.7",
+    "@storybook/addon-storyshots": "^6.2.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -55,6 +57,7 @@
     "jest": "^26.6.3",
     "jest-preset-angular": "^8.3.2",
     "karma-coverage": "~2.0.3",
+    "react": "^16.14.0",
     "ts-jest": "^26.4.4",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
@@ -102,7 +105,9 @@
     },
     "transform": {
       "^.+\\.(ts|html)$": "ts-jest",
-      "^.+\\.js$": "babel-jest"
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.stories\\.[jt]sx?$": "@storybook/addon-storyshots/injectFileName",
+      "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
     },
     "moduleFileExtensions": [
       "ts",
