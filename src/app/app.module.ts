@@ -1,20 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { TaskModule } from './components/task.module';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+
 import { AppComponent } from './app.component';
-import { TaskComponent } from './components/task/task.component';
-import { TaskListComponent } from './components/task-list/task-list.component';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TaskComponent,
-    TaskListComponent
   ],
   imports: [
     BrowserModule,
-    CommonModule
+    TaskModule,
+    NgxsModule.forRoot([]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
