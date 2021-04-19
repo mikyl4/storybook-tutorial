@@ -1,10 +1,10 @@
-import { render } from '@testing-library/angular';
 import { AppComponent } from './app.component';
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('App', () => {
   let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
@@ -15,9 +15,18 @@ describe('App', () => {
     }).compileComponents();
   })
 
-  test('should render the App component', async () => {
-    const { getByText } = await render(AppComponent);
-    expect(getByText('Taskbox'));
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.debugElement.componentInstance;
+    fixture.detectChanges();
   });
+
+  it('should create the app', (() => {
+    expect(component).toBeTruthy();
+  }));
+
+
+
+
 
 });

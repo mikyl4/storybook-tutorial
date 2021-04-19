@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 
 import { PureTaskListComponent } from './pure-task-list.component';
 import { TaskComponent } from './task.component';
-
 import * as TaskStories from './task.stories';
 
 export default {
@@ -16,7 +15,7 @@ export default {
       imports: [CommonModule],
     }),
   ],
-  title: 'TaskList',
+  title: 'PureTaskList',
 } as Meta;
 
 const Template: Story<PureTaskListComponent> = args => ({
@@ -43,7 +42,6 @@ Default.args = {
     { ...TaskStories.Default.args.task, id: '6', title: 'Task 6' },
   ],
 };
-
 export const WithPinnedTasks = Template.bind({});
 WithPinnedTasks.args = {
   tasks: [
